@@ -17,9 +17,9 @@ export const NavBarConteiner = styled.div`
   padding: 0.7rem;
 `;
 
-export const Image = styled.div`
+export const Image = styled.div<{ $isMobile?: boolean }>`
   padding-top: 4rem;
-  height: 16.25rem;
+  height: ${(props) => (props.$isMobile ? "10rem" : "16.25rem")};
   width: 100%;
   background-image: url(${Bg});
   background-repeat: no-repeat;

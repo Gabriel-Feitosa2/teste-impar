@@ -70,9 +70,12 @@ function Home() {
   });
 
   const filterPokemon = () => {
-    return listAllPokemons.data?.results.filter((pokemon) =>
-      pokemon.name.includes(search)
-    );
+    if (listAllPokemons.data) {
+      return listAllPokemons.data?.results.filter((pokemon) =>
+        pokemon.name.includes(search)
+      );
+    }
+    return [];
   };
 
   const pokemons = useQueries({
@@ -120,7 +123,7 @@ function Home() {
           <img src={Logo} />
         </NavBarConteiner>
       </Navbar>
-      <Image>
+      <Image $isMobile={isMobile}>
         <Input
           type="text"
           placeholder="Digite aqui sua busca..."
@@ -148,16 +151,20 @@ function Home() {
           ))}
         </CardWrapper>
         <BottomWrapper>
-          <ButtonArrow onClick={() => setOffset(0)}>{" << "}</ButtonArrow>
-          <ButtonArrow onClick={onArrowLeftClick}>{" < "}</ButtonArrow>
-          {Math.round(offset / 10) + 1} de{" "}
-          {info.data ? Math.ceil(info.data?.count / 10) : 0}
-          <ButtonArrow onClick={() => setOffset(offset + 10)}>
-            {" > "}
-          </ButtonArrow>
-          <ButtonArrow onClick={() => setOffset(info.data?.count || 0)}>
-            {" >> "}
-          </ButtonArrow>
+          {search === "" && (
+            <>
+              <ButtonArrow onClick={() => setOffset(0)}>{" << "}</ButtonArrow>
+              <ButtonArrow onClick={onArrowLeftClick}>{" < "}</ButtonArrow>
+              {Math.round(offset / 10) + 1} de{" "}
+              {info.data ? Math.ceil(info.data?.count / 10) : 0}
+              <ButtonArrow onClick={() => setOffset(offset + 10)}>
+                {" > "}
+              </ButtonArrow>
+              <ButtonArrow onClick={() => setOffset(info.data?.count || 0)}>
+                {" >> "}
+              </ButtonArrow>
+            </>
+          )}
         </BottomWrapper>
       </Body>
     </>
