@@ -1,28 +1,27 @@
 # Teste Ímpar
 
-Uma breve descrição do projeto.
+Um projeto para demonstrar o consumo da pokeAPI.
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-React - Biblioteca JavaScript para criação de interfaces de usuário.
+- React: Biblioteca JavaScript para criação de interfaces de usuário.
+- Vite: Ferramenta de build rápida para projetos modernos.
+- Node.js: Ambiente de execução JavaScript no servidor.
 
-Vite - Ferramenta de build rápida para projetos modernos.
+## Requisitos
 
-Node.js - Ambiente de execução JavaScript no servidor.
+Certifique-se de ter os seguintes requisitos instalados:
 
-Requisitos
+- Node.js (versão 18 ou superior)
+- NPM ou Yarn
 
-Certifique-se de que você possui os seguintes requisitos instalados:
+## Instalação
 
-Node.js (versão 18 ou superior)
-
-NPM ou Yarn
-
-Navegue para o diretório do projeto:
+1. Navegue para o diretório do projeto:
 
 cd nome-do-projeto
 
-# Instale as dependências:
+2. Instale as dependências:
 
 `npm install`
 ou
